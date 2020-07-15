@@ -254,4 +254,25 @@ input:focus {
     .footer {
         font-size: 12px;
     }
+    .github-button {
+        font-size: 10px !important;
+        padding: 0.5% 0.1% !important;
+        width: 100px;
+    }
+}
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.github {
+    display: inline-flex;
+}
+.github-button {
+    font-size: 12px;
+    padding: 3%;
+    background: var(--grey-05);
+    border: 2px solid var(--grey-85);
+    color: var(--grey-90);
+    margin: 1%;
+    width: 150px;
 }

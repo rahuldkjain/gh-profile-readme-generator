@@ -1,6 +1,6 @@
 import { Link } from "gatsby"
 import React from "react"
-import GitHubButton from 'react-github-btn'
+import {StarIcon, RepoForkedIcon} from '@primer/octicons-react'
 
 const Header = (props) => {
   return (
@@ -10,13 +10,16 @@ const Header = (props) => {
           {props.heading}
         </div>
       </h1>
-      <GitHubButton id="star-github" href="https://github.com/rahuldkjain/github-profile-readme-generator"
-        data-icon="octicon-star" aria-label="Star rahuldkjain/github-profile-readme-generator on GitHub">
-        Star this repo</GitHubButton>
-
-      <GitHubButton id="fork-github" href="https://github.com/rahuldkjain/github-profile-readme-generator/fork"
-        data-icon="octicon-repo-forked"
-        aria-label="Fork rahuldkjain/github-profile-readme-generator on GitHub">Fork on Github</GitHubButton>
+      <div className="github">
+        <a href="https://github.com/rahuldkjain/github-profile-readme-generator" 
+        aria-label="Star rahuldkjain/github-profile-readme-generator on GitHub" target="blank">
+          <div className="github-button"> <StarIcon size={16} /> Star this repo </div>
+        </a>
+        <a href="https://github.com/rahuldkjain/github-profile-readme-generator/fork" 
+        aria-label="Fork rahuldkjain/github-profile-readme-generator on GitHub" target="blank">
+          <div className="github-button"><RepoForkedIcon size={16} /> Fork on Github </div>
+        </a>
+      </div>
     </div>
   )
 }
