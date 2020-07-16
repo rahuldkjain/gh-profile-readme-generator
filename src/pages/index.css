@@ -38,6 +38,7 @@ input:focus {
     -moz-box-shadow: 0 1px 1px var(--grey-90) !important;
     box-shadow: 0 1px 1px var(--grey-90) !important;
     cursor: pointer;
+    border-radius: 0px !important;
 }
 .icon {
     width: 25px;
@@ -219,7 +220,49 @@ input:focus {
     width: 100%;
     text-align: center;
 }
-
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+.github {
+    display: inline-flex;
+}
+.github-button {
+    font-size: 12px;
+    padding: 3%;
+    background: var(--grey-05);
+    border: 2px solid var(--grey-85);
+    color: var(--grey-90);
+    margin: 1%;
+    width: 150px;
+}
+.logo {
+    width: 40px;
+    height: 40px;
+}
+.skills {
+    margin: 1%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.skill {
+    display: flex;
+    justify-content: flex-start;
+    align-self: center;
+    padding-left: 10%;
+}
+.skill-icon {
+    margin-left: 12%;
+    width: 40px;
+    height: 40px;
+}
+.skills-preview {}
+.skill-preview-icon {
+    width: 40px;
+    height: 40px;
+    margin: 1%;
+}
 @media only screen and (max-width: 1199px) {
     h1, h2, h3, h4 {
         margin: 2% 0% !important;
@@ -249,7 +292,7 @@ input:focus {
         height: 15px;
     }
     .heading {
-        font-size: 14px;
+        font-size: 18px;
     }
     .footer {
         font-size: 12px;
@@ -257,22 +300,24 @@ input:focus {
     .github-button {
         font-size: 10px !important;
         padding: 0.5% 0.1% !important;
-        width: 100px;
+        width: 120px;
     }
-}
-a {
-    text-decoration: none;
-    cursor: pointer;
-}
-.github {
-    display: inline-flex;
-}
-.github-button {
-    font-size: 12px;
-    padding: 3%;
-    background: var(--grey-05);
-    border: 2px solid var(--grey-85);
-    color: var(--grey-90);
-    margin: 1%;
-    width: 150px;
+    .logo {
+        width: 20px;
+        height: 20px;
+    }
+    .skills {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .skill-icon {
+        margin-left: 12%;
+        width: 25px;
+        height: 25px;
+    }
+    .skill-preview-icon {
+        width: 20px;
+        height: 20px;
+        margin: 1%;
+    }
 }

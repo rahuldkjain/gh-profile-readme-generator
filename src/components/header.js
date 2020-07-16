@@ -1,11 +1,14 @@
 import { Link } from "gatsby"
 import React from "react"
 import {StarIcon, RepoForkedIcon} from '@primer/octicons-react'
+import logo from '../images/mdg.png'
 
 const Header = (props) => {
   return (
     <div className="header">
       <h1 className="heading">
+        <img src={logo} onClick={() => window.location.reload(false)} 
+        className="logo" alt="github profile markdown generator logo" />
         <div onClick={() => window.location.reload(false)}>
           {props.heading}
         </div>

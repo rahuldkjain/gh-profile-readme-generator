@@ -7,6 +7,8 @@ import Subtitle from '../components/subtitle';
 import Work from '../components/work';
 import Social from '../components/social';
 import Addons from '../components/addons';
+import Skills from '../components/skills';
+import { initialSkillState } from '../constants/skills';
 import gsap from 'gsap';
 import Loader from '../components/loader';
 import Footer from '../components/footer';
@@ -58,9 +60,15 @@ const IndexPage = () => {
     instagram: '',
     twitter: '',
   });
+  const [skills, setSkills] = useState(initialSkillState)
   const [generatePreview, setGeneratePreview] = useState(false);
   const [generateMarkdown, setGenerateMarkdown] = useState(false);
   const [displayLoader, setDisplayLoader] = useState(false);
+  const handleSkillsChange = (field) => {
+    let change = { ...skills }
+    change[field] = !change[field];
+    setSkills(change);
+  }
   const handlePrefixChange = (field, e) => {
     let change = { ...prefix }
     change[field] = e.target.value;
@@ -128,6 +136,10 @@ const IndexPage = () => {
       gsap.set('#copy-markdown', {
         visibility: 'visible'
       });
+      gsap.set('#copy-markdown', {
+        innerHTML: 'copy',
+        color: '#0a0a23',
+      });
       document.getElementById('preview-markdown').innerHTML = 'preview'
     }
   }
@@ -150,7 +162,7 @@ const IndexPage = () => {
       display: ''
     });
     gsap.to('.generate', {
-      scale: 1,      
+      scale: 1,
     });
   }
   return (
@@ -161,9 +173,9 @@ const IndexPage = () => {
         <Title data={data} prefix={prefix} handleDataChange={handleDataChange} handlePrefixChange={handlePrefixChange} />
         <Subtitle data={data} handleDataChange={handleDataChange} />
         <Work prefix={prefix} data={data} link={link} handlePrefixChange={handlePrefixChange} handleLinkChange={handleLinkChange} handleDataChange={handleDataChange} />
+        <Skills skills={skills} handleSkillsChange={handleSkillsChange} />
         <Social social={social} handleSocialChange={handleSocialChange} />
         <Addons data={data} handleCheckChange={handleCheckChange} />
-
         <div className="section">
           {(data.visitorsBadge || data.githubStats) && !social.github ?
             <div className="warning">* Please add github username to use these add-ons</div> : ''}
@@ -177,7 +189,7 @@ const IndexPage = () => {
         <div className="section">
           <div className="back-button" tabIndex="0" role="button" onClick={handleBackToEdit}>&#8592; back to edit</div>
         </div>
-      : '' }
+        : ''}
       {(generateMarkdown || generatePreview) ?
         <div className="markdown">
           <div className="markdown-box">
@@ -185,8 +197,8 @@ const IndexPage = () => {
               <div className="copy-button" tabIndex="0" role="button" id="copy-markdown" onClick={handleCopyToClipboard}>copy</div>
               <div className="preview-button" tabIndex="0" role="button" id="preview-markdown" onClick={handleGeneratePreview}>preview</div>
             </div>
-            {generatePreview ? <MarkdownPreview prefix={prefix} data={data} link={link} social={social} /> : ''}
-            {generateMarkdown ? <Markdown prefix={prefix} data={data} link={link} social={social} /> : ''}
+            {generatePreview ? <MarkdownPreview prefix={prefix} data={data} link={link} social={social} skills={skills} /> : ''}
+            {generateMarkdown ? <Markdown prefix={prefix} data={data} link={link} social={social} skills={skills} /> : ''}
           </div>
         </div>
         : ''}
