@@ -85,7 +85,7 @@ const Markdown = (props) => {
             <><DisplayWork prefix={props.prefix.contact} project={props.data.contact} /></>
             <><DisplayWork prefix={props.prefix.funFact} project={props.data.funFact} /></>
 
-            <div><DisplaySkills skills={props.skills} /></div>
+            <><DisplaySkills skills={props.skills} /></>
             <><GithubStats show={props.data.githubStats} github={props.social.github} /></>
             {isSocial(props.social) ? `<p align="center">` : ''} <br />
             <><DisplaySocial base='https://codepen.io' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codepen.svg'
@@ -107,7 +107,6 @@ const Markdown = (props) => {
             <><DisplaySocial base='https://instagram.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg'
                 username={props.social.instagram} /></>
             {isSocial(props.social) ? `</p>` : ''}
-            <br /><br />
         </div>
     );
 };

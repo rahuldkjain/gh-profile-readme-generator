@@ -127,33 +127,40 @@ input:focus {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 2%;
 }
 .markdown-box {
-    width: 80%;
+    width: 100%;
     font-size: 12px;
     color: var(--grey-85);
     border: 2px solid var(--grey-75);
-    -webkit-box-shadow: 0px 0px 5px 5px rgba(208,208,213,0.75);
-    -moz-box-shadow: 0px 0px 5px 5px rgba(208,208,213,0.75);
-    box-shadow: 0px 0px 5px 5px rgba(208,208,213,0.75);
+    -webkit-box-shadow: 3px 5px 5px 5px rgba(208,208,213,0.75);
+    -moz-box-shadow: 3px 5px 5px 5px rgba(208,208,213,0.75);
+    box-shadow: 3px 5px 5px 5px rgba(208,208,213,0.75);
     padding: 1% 2% 0.5% 2%;
+    margin-top:0.5%;
 }
 .copy-button {
-    border: 2px solid var(--grey-15);
-    padding: 1%;
+    background: var(--grey-05);
+    border: 2px solid var(--grey-75);
     text-align: center;
     cursor: pointer;
+    width: 50%;
+    justify-self: center;
+    padding: 2% 0%;
 }
-.markdown-util {
-    display: flex;
-    justify-content: flex-end;
+.utils {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 4%;
 }
 .preview-button {
-    border: 2px solid var(--grey-15);
-    padding: 1%;
+    background: var(--grey-05);
+    border: 2px solid var(--grey-75);
     text-align: center;
     cursor: pointer;
+    width: 50%;
+    justify-self: end;
+    padding: 2% 0%;
 }
 .loader {
     height: 100vh;
@@ -165,11 +172,13 @@ input:focus {
   }
 
 .back-button {
-    color: var(--grey-75);
-    width: 14%;
-    font-size: 20px;
-    margin-left: 10%;
+    background: var(--grey-05);
+    border: 2px solid var(--grey-75);
+    text-align: center;
     cursor: pointer;
+    width: 50%;
+    justify-self: start;
+    padding: 2% 0%;
 }
 .title {
     text-align: center;
@@ -277,11 +286,6 @@ a {
     .button {
         width: 60%;
     }
-    .back-button {
-        width: 32%;
-        font-size: 12px;
-        margin: 3% 0%;
-    }
     .cardImage {
         width: 200px;
         height: 100px;
@@ -318,12 +322,10 @@ a {
         height: 20px;
         margin: 1%;
     }
-    .copy-button, .preview-button {
-        font-size: 10px;
-        margin: 0.2%;
-        padding: 0.5% 2%;
+    .hide-on-mobile {
+        display: none;
     }
     #markdown-content {
-        font-size: 10px !important; 
+        word-break: break-all;
     }
 }

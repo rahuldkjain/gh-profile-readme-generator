@@ -13,6 +13,7 @@ import gsap from 'gsap';
 import Loader from '../components/loader';
 import Footer from '../components/footer';
 import './index.css'
+import { ArrowLeftIcon, CopyIcon, EyeIcon } from '@primer/octicons-react';
 import SEO from '../components/seo';
 
 const IndexPage = () => {
@@ -128,16 +129,16 @@ const IndexPage = () => {
     setGenerateMarkdown(!generateMarkdown);
     setGeneratePreview(!generatePreview);
     if (!generatePreview) {
-      gsap.set('#copy-markdown', {
+      gsap.set('.copy-button', {
         visibility: 'hidden'
       });
       document.getElementById('preview-markdown').innerHTML = 'markdown'
     } else {
-      gsap.set('#copy-markdown', {
+      gsap.set('.copy-button', {
         visibility: 'visible'
       });
       gsap.set('#copy-markdown', {
-        innerHTML: 'copy',
+        innerHTML: 'copy-markdown',
         color: '#0a0a23',
       });
       document.getElementById('preview-markdown').innerHTML = 'preview'
@@ -186,21 +187,25 @@ const IndexPage = () => {
       </div>
       {displayLoader ? <Loader /> : ''}
       {(generateMarkdown || generatePreview) ?
-        <div className="section">
-          <div className="back-button" tabIndex="0" role="button" onClick={handleBackToEdit}>&#8592; back to edit</div>
-        </div>
-        : ''}
-      {(generateMarkdown || generatePreview) ?
-        <div className="markdown">
-          <div className="markdown-box">
-            <div className="markdown-util">
-              <div className="copy-button" tabIndex="0" role="button" id="copy-markdown" onClick={handleCopyToClipboard}>copy</div>
-              <div className="preview-button" tabIndex="0" role="button" id="preview-markdown" onClick={handleGeneratePreview}>preview</div>
+        <>
+          <div className="utils">
+            <div className="back-button" tabIndex="0" role="button" onClick={handleBackToEdit}>
+              <ArrowLeftIcon size={16} /> <span className="hide-on-mobile"> back to edit</span>
             </div>
-            {generatePreview ? <MarkdownPreview prefix={prefix} data={data} link={link} social={social} skills={skills} /> : ''}
-            {generateMarkdown ? <Markdown prefix={prefix} data={data} link={link} social={social} skills={skills} /> : ''}
+            <div className="copy-button" tabIndex="0" role="button" onClick={handleCopyToClipboard}>
+              <CopyIcon size={24} /> <span className="hide-on-mobile" id="copy-markdown"> copy-markdown </span>
+            </div>
+            <div className="preview-button" tabIndex="0" role="button" onClick={handleGeneratePreview}>
+              <EyeIcon size={16} /> <span className="hide-on-mobile" id="preview-markdown"> preview</span>
+            </div>
           </div>
-        </div>
+          <div className="markdown">
+            <div className="markdown-box">
+              {generatePreview ? <MarkdownPreview prefix={prefix} data={data} link={link} social={social} skills={skills} /> : ''}
+              {generateMarkdown ? <Markdown prefix={prefix} data={data} link={link} social={social} skills={skills} /> : ''}
+            </div>
+          </div>
+        </>
         : ''}
       <Footer />
     </>
