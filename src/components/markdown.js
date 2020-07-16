@@ -72,40 +72,40 @@ const Markdown = (props) => {
     }
     return (
         <div id="markdown-content">
-            <Title prefix={props.prefix.title} title={props.data.title} />
-            <SubTitle subtitle={props.data.subtitle} />
-            <VisitorsBadge show={props.data.visitorsBadge} github={props.social.github} />
+            <><Title prefix={props.prefix.title} title={props.data.title} /></>
+            <><SubTitle subtitle={props.data.subtitle} /></>
+            <><VisitorsBadge show={props.data.visitorsBadge} github={props.social.github} /></>
 
-            <DisplayWork prefix={props.prefix.currentWork} project={props.data.currentWork} link={props.link.currentWork} />
-            <DisplayWork prefix={props.prefix.collaborateOn} project={props.data.collaborateOn} link={props.link.collaborateOn} />
-            <DisplayWork prefix={props.prefix.helpWith} project={props.data.helpWith} link={props.link.helpWith} />
-            <DisplayWork prefix={props.prefix.portfolio} project={props.data.portfolio} />
-            <DisplayWork prefix={props.prefix.blog} project={props.data.blog} />
-            <DisplayWork prefix={props.prefix.ama} project={props.data.ama} />
-            <DisplayWork prefix={props.prefix.contact} project={props.data.contact} />
-            <DisplayWork prefix={props.prefix.funFact} project={props.data.funFact} />
+            <><DisplayWork prefix={props.prefix.currentWork} project={props.data.currentWork} link={props.link.currentWork} /></>
+            <><DisplayWork prefix={props.prefix.collaborateOn} project={props.data.collaborateOn} link={props.link.collaborateOn} /></>
+            <><DisplayWork prefix={props.prefix.helpWith} project={props.data.helpWith} link={props.link.helpWith} /></>
+            <><DisplayWork prefix={props.prefix.portfolio} project={props.data.portfolio} /></>
+            <><DisplayWork prefix={props.prefix.blog} project={props.data.blog} /></>
+            <><DisplayWork prefix={props.prefix.ama} project={props.data.ama} /></>
+            <><DisplayWork prefix={props.prefix.contact} project={props.data.contact} /></>
+            <><DisplayWork prefix={props.prefix.funFact} project={props.data.funFact} /></>
 
-            <DisplaySkills skills={props.skills} />
-            <GithubStats show={props.data.githubStats} github={props.social.github} />
+            <><DisplaySkills skills={props.skills} /></>
+            <><GithubStats show={props.data.githubStats} github={props.social.github} /></>
             {isSocial(props.social) ? `<p align="center">` : ''} <br />
-            <DisplaySocial base='https://codepen.io' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codepen.svg'
-                username={props.social.codepen} />
-            <DisplaySocial base='https://dev.to' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/dev-dot-to.svg'
-                username={props.social.dev} />
-            <DisplaySocial base='https://twitter.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg'
-                username={props.social.twitter} />
-            <DisplaySocial base='https://linkedin.com/in' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg'
-                username={props.social.linkedin} />
-            <DisplaySocial base='https://stackoverflow.com'
-                icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/stackoverflow.svg' username={props.social.stackoverflow} />
-            <DisplaySocial base='https://codesandbox.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codesandbox.svg'
-                username={props.social.codesandbox} />
-            <DisplaySocial base='https://kaggle.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/kaggle.svg'
-                username={props.social.kaggle} />
-            <DisplaySocial base='https://fb.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg'
-                username={props.social.fb} />
-            <DisplaySocial base='https://instagram.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg'
-                username={props.social.instagram} />
+            <><DisplaySocial base='https://codepen.io' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codepen.svg'
+                username={props.social.codepen} /></>
+            <><DisplaySocial base='https://dev.to' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/dev-dot-to.svg'
+                username={props.social.dev} /></>
+            <><DisplaySocial base='https://twitter.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg'
+                username={props.social.twitter} /></>
+            <><DisplaySocial base='https://linkedin.com/in' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/linkedin.svg'
+                username={props.social.linkedin} /></>
+            <><DisplaySocial base='https://stackoverflow.com'
+                icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/stackoverflow.svg' username={props.social.stackoverflow} /></>
+            <><DisplaySocial base='https://codesandbox.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codesandbox.svg'
+                username={props.social.codesandbox} /></>
+            <><DisplaySocial base='https://kaggle.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/kaggle.svg'
+                username={props.social.kaggle} /></>
+            <><DisplaySocial base='https://fb.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg'
+                username={props.social.fb} /></>
+            <><DisplaySocial base='https://instagram.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg'
+                username={props.social.instagram} /></>
             {isSocial(props.social) ? `</p>` : ''}
             <br /><br />
         </div>

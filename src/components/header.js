@@ -1,4 +1,3 @@
-import { Link } from "gatsby"
 import React from "react"
 import {StarIcon, RepoForkedIcon} from '@primer/octicons-react'
 import logo from '../images/mdg.png'
