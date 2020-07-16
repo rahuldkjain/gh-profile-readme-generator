@@ -141,6 +141,10 @@ const IndexPage = () => {
         innerHTML: 'copy-markdown',
         color: '#0a0a23',
       });
+      gsap.to('.copy-button', {
+        border: '2px solid #3b3b4f',
+        duration: 1
+      });
       document.getElementById('preview-markdown').innerHTML = 'preview'
     }
   }
@@ -154,6 +158,10 @@ const IndexPage = () => {
     gsap.set('#copy-markdown', {
       innerHTML: 'copied',
       color: '#00471b',
+    });
+    gsap.to('.copy-button', {
+      border: '2px solid #00471b',
+      duration: 1
     });
   }
   const handleBackToEdit = () => {

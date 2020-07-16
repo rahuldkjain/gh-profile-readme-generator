@@ -223,7 +223,7 @@ input:focus {
     cursor: pointer;
 }
 .footer {
-    margin: 2% 0%;
+    margin: 5% 0% 2% 0%;
     width: 100%;
     text-align: center;
 }
