@@ -139,10 +139,6 @@ input:focus {
     box-shadow: 0px 0px 5px 5px rgba(208,208,213,0.75);
     padding: 1% 2% 0.5% 2%;
 }
-#markdown-content {
-    width: 100%;
-    padding: 1%;
-}
 .copy-button {
     border: 2px solid var(--grey-15);
     padding: 1%;
@@ -282,8 +278,9 @@ a {
         width: 60%;
     }
     .back-button {
-        width: 45%;
+        width: 32%;
         font-size: 12px;
+        margin: 3% 0%;
     }
     .cardImage {
         width: 200px;
@@ -322,7 +319,11 @@ a {
         margin: 1%;
     }
     .copy-button, .preview-button {
+        font-size: 10px;
         margin: 0.2%;
         padding: 0.5% 2%;
+    }
+    #markdown-content {
+        font-size: 10px !important; 
     }
 }

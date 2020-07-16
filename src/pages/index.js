@@ -86,7 +86,7 @@ const IndexPage = () => {
   }
   const handleSocialChange = (field, e) => {
     let change = { ...social }
-    change[field] = e.target.value;
+    change[field] = e.target.value.toLowerCase();
     setSocial(change);
   }
   const handleCheckChange = (field) => {

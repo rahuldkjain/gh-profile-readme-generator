@@ -85,7 +85,7 @@ const Markdown = (props) => {
             <><DisplayWork prefix={props.prefix.contact} project={props.data.contact} /></>
             <><DisplayWork prefix={props.prefix.funFact} project={props.data.funFact} /></>
 
-            <><DisplaySkills skills={props.skills} /></>
+            <div><DisplaySkills skills={props.skills} /></div>
             <><GithubStats show={props.data.githubStats} github={props.social.github} /></>
             {isSocial(props.social) ? `<p align="center">` : ''} <br />
             <><DisplaySocial base='https://codepen.io' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codepen.svg'
