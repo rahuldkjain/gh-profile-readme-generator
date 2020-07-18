@@ -155,13 +155,22 @@ input:focus {
     border: 2px solid var(--grey-75);
     text-align: center;
     cursor: pointer;
-    width: 50%;
+    width: 60%;
+    justify-self: center;
+    padding: 2% 0%;
+}
+.download-button {
+    background: var(--grey-05);
+    border: 2px solid var(--grey-75);
+    text-align: center;
+    cursor: pointer;
+    width: 60%;
     justify-self: center;
     padding: 2% 0%;
 }
 .utils {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     margin-top: 4%;
 }
 .preview-button {
@@ -169,7 +178,7 @@ input:focus {
     border: 2px solid var(--grey-75);
     text-align: center;
     cursor: pointer;
-    width: 50%;
+    width: 60%;
     justify-self: end;
     padding: 2% 0%;
 }
@@ -187,7 +196,7 @@ input:focus {
     border: 2px solid var(--grey-75);
     text-align: center;
     cursor: pointer;
-    width: 50%;
+    width: 60%;
     justify-self: start;
     padding: 2% 0%;
 }
