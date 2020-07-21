@@ -1,5 +1,5 @@
 import React from 'react';
-import { icons, baseURL, skills } from '../constants/skills';
+import { icons, skills } from '../constants/skills';
 const Skills = (props) => {
     const listSkills = skills.map((skill) => {
         return (
@@ -7,8 +7,9 @@ const Skills = (props) => {
                 <label htmlFor={skill} className="skillCheckboxLabel">
                     <input id={skill} type="checkbox" checked={props.skills[skill]}
                         onChange={event => props.handleSkillsChange(skill)} />
-                        <img className="skill-icon" src={baseURL + icons[skill]}
-                            alt={skill} />
+                    <img className="skill-icon" src={icons[skill]}
+                        alt={skill} />
+                    <span className="tooltiptext">{skill}</span>
                 </label>
             </div>
         );

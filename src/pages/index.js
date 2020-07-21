@@ -13,9 +13,9 @@ import gsap from 'gsap';
 import Loader from '../components/loader';
 import Footer from '../components/footer';
 import './index.css'
-import { ArrowLeftIcon, CopyIcon, DownloadIcon, EyeIcon } from '@primer/octicons-react';
+import { ArrowLeftIcon, CopyIcon, DownloadIcon, EyeIcon, CheckIcon, MarkdownIcon } from '@primer/octicons-react';
 import SEO from '../components/seo';
-
+import { isGithubUsernameValid } from '../utils/validation';
 const IndexPage = () => {
   const [prefix, setPrefix] = useState({
     title: "Hi 👋, I'm",
@@ -60,11 +60,23 @@ const IndexPage = () => {
     fb: '',
     instagram: '',
     twitter: '',
+    dribbble: '',
+    behance: '',
+    medium: '',
+    youtube: ''
   });
   const [skills, setSkills] = useState(initialSkillState)
   const [generatePreview, setGeneratePreview] = useState(false);
   const [generateMarkdown, setGenerateMarkdown] = useState(false);
   const [displayLoader, setDisplayLoader] = useState(false);
+  const [copyObj, setcopyObj] = useState({
+    isCopied: false,
+    copiedText: 'copy-markdown'
+  });
+  const [previewMarkdown, setPreviewMarkdown] = useState({
+    isPreview: false,
+    buttonText: 'preview'
+  });
   const handleSkillsChange = (field) => {
     let change = { ...skills }
     change[field] = !change[field];
@@ -116,9 +128,21 @@ const IndexPage = () => {
       });
     }, 3000);
   }
+  const trimDataValues = (item, setItem) => {
+    const dataObj = { ...item };
+    Object.keys(dataObj).forEach(k => (typeof dataObj[k] === 'string') ? dataObj[k] = dataObj[k].trim() : null);
+    setItem(dataObj);
+  }
   const handleGenerate = () => {
+    trimDataValues(data, setData);
+    trimDataValues(social, setSocial);
+    trimDataValues(link, setLink);
     if (data.visitorsBadge || data.githubStats) {
-      if (social.github) {
+      if (social.github && isGithubUsernameValid(social.github)) {
+        generate();
+      }
+    } else if (social.github) {
+      if (isGithubUsernameValid(social.github)) {
         generate();
       }
     } else {
@@ -129,34 +153,39 @@ const IndexPage = () => {
     setGenerateMarkdown(!generateMarkdown);
     setGeneratePreview(!generatePreview);
     if (!generatePreview) {
-      gsap.set('.copy-button', {
+      gsap.set('.copy-button, .download-button', {
         visibility: 'hidden'
       });
-      document.getElementById('preview-markdown').innerHTML = 'markdown'
+      setPreviewMarkdown({
+        isPreview: true,
+        buttonText: 'markdown'
+      })
     } else {
-      gsap.set('.copy-button', {
+      gsap.set('.copy-button, .download-button', {
         visibility: 'visible'
-      });
-      gsap.set('#copy-markdown', {
-        innerHTML: 'copy-markdown',
-        color: '#0a0a23',
       });
       gsap.to('.copy-button', {
         border: '2px solid #3b3b4f',
         duration: 1
       });
-      document.getElementById('preview-markdown').innerHTML = 'preview'
+      setPreviewMarkdown({
+        isPreview: false,
+        buttonText: 'preview'
+      })
+      resetCopyMarkdownButton();
     }
   }
-  const handleCopyToClipboard = () => {
-    var range = document.createRange();
-    range.selectNode(document.getElementById("markdown-content"));
-    window.getSelection().removeAllRanges(); // clear current selection
-    window.getSelection().addRange(range); // to select text
-    document.execCommand("copy");
-    window.getSelection().removeAllRanges();
+  const resetCopyMarkdownButton = () => {
     gsap.set('#copy-markdown', {
-      innerHTML: 'copied',
+      color: '#0a0a23',
+    });
+    setcopyObj({
+      isCopied: false,
+      copiedText: 'copy-markdown'
+    });
+  }
+  const setCopyMarkdownButton = () => {
+    gsap.set('#copy-markdown', {
       color: '#00471b',
     });
     gsap.fromTo('.copy-button', {
@@ -167,6 +196,20 @@ const IndexPage = () => {
       border: '2px solid #00471b',
       duration: 0.5
     });
+    setcopyObj({
+      isCopied: true,
+      copiedText: 'copied'
+    });
+  }
+  const handleCopyToClipboard = () => {
+    var range = document.createRange();
+    range.selectNode(document.getElementById("markdown-content"));
+    window.getSelection().removeAllRanges(); // clear current selection
+    window.getSelection().addRange(range); // to select text
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+
+    setCopyMarkdownButton();
   }
 
   const handleDownload = () => {
@@ -189,6 +232,7 @@ const IndexPage = () => {
     gsap.to('.generate', {
       scale: 1,
     });
+    resetCopyMarkdownButton();
   }
   useEffect(() => {
     gsap.fromTo(".generate", {
@@ -213,6 +257,8 @@ const IndexPage = () => {
         <div className="section">
           {(data.visitorsBadge || data.githubStats) && !social.github ?
             <div className="warning">* Please add github username to use these add-ons</div> : ''}
+          {social.github && !isGithubUsernameValid(social.github) ?
+            <div className="warning">* Github username is invalid, please add a valid username</div> : ''}
         </div>
         <div className="submit">
           <div className="button generate" tabIndex="0" role="button" onClick={handleGenerate}>Generate README</div>
@@ -226,13 +272,19 @@ const IndexPage = () => {
               <ArrowLeftIcon size={16} /> <span className="hide-on-mobile"> back to edit</span>
             </div>
             <div className="copy-button" tabIndex="0" role="button" onClick={handleCopyToClipboard}>
-              <CopyIcon size={24} /> <span className="hide-on-mobile" id="copy-markdown"> copy-markdown </span>
+              {
+                copyObj.isCopied === true ?
+                  <CheckIcon size={24} />
+                  :
+                  <CopyIcon size={24} />
+              }
+              <span className="hide-on-mobile" id="copy-markdown"> {copyObj.copiedText} </span>
             </div>
             <div className="download-button" tabIndex="0" role="button" onClick={handleDownload}>
               <DownloadIcon size={24} /> <span className="hide-on-mobile" id="download-markdown"> download </span>
             </div>
             <div className="preview-button" tabIndex="0" role="button" onClick={handleGeneratePreview}>
-              <EyeIcon size={16} /> <span className="hide-on-mobile" id="preview-markdown"> preview</span>
+              {previewMarkdown.isPreview ? <MarkdownIcon size={16} /> : <EyeIcon size={16} />} <span className="hide-on-mobile" id="preview-markdown">{previewMarkdown.buttonText}</span>
             </div>
           </div>
           <div className="markdown">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { baseURL, icons, skills } from '../constants/skills';
+import {icons, skills } from '../constants/skills';
 
 const Markdown = (props) => {
     const Title = (props) => {
@@ -59,13 +59,13 @@ const Markdown = (props) => {
     }
     const isSocial = (social) => {
         return (social.dev || social.twitter || social.codepen || social.codesandbox || social.stackoverflow
-            || social.linkedin || social.kaggle || social.instagram || social.fb);
+            || social.linkedin || social.kaggle || social.instagram || social.fb || social.dribbble || social.behance ||social.medium ||social.youtube );
     }
     const DisplaySkills = (props) => {
         const listChosenSkills = [];
         skills.forEach(skill => {
             if (props.skills[skill]) {
-                listChosenSkills.push(`<img src="${baseURL + icons[skill]}" alt="${skill}" width="20" height="20"/>`);
+                listChosenSkills.push(`<img src="${icons[skill]}" alt="${skill}" width="20" height="20"/>`);
             }
         });
         return listChosenSkills.length > 0 ? `<p align="left">${listChosenSkills.join(' ')}</p>` : '';
@@ -105,7 +105,15 @@ const Markdown = (props) => {
             <><DisplaySocial base='https://fb.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/facebook.svg'
                 username={props.social.fb} /></>
             <><DisplaySocial base='https://instagram.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/instagram.svg'
-                username={props.social.instagram} /></>
+                username={ props.social.instagram } /></>
+            <><DisplaySocial base='https://dribbble.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/dribbble.svg'
+                username={ props.social.dribbble } /></>
+            <><DisplaySocial base='https://www.behance.net' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/behance.svg'
+                username={ props.social.behance } /></>
+            <><DisplaySocial base='https://medium.com' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/medium.svg'
+                username={ props.social.medium } /></>
+            <><DisplaySocial base='https://www.youtube.com/c' icon='https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/youtube.svg'
+                username={props.social.youtube} /></>
             {isSocial(props.social) ? `</p>` : ''}
         </div>
     );
