@@ -370,9 +370,6 @@ a {
         word-break: break-all;
     }
     .tooltiptext {
-        visibility: hidden;
-    }
-    .skillCheckboxLabel:hover .tooltiptext {
-        visibility: hidden;
+        display: none;
     }
 }
