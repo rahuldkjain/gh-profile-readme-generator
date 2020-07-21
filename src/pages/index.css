@@ -326,6 +326,8 @@ a {
     }
     .button {
         width: 60%;
+        margin: 2% 0%;
+        font-size: 14px;
     }
     .cardImage {
         width: 200px;
@@ -371,5 +373,8 @@ a {
     }
     .tooltiptext {
         display: none;
+    }
+    .warning {
+        font-size: 10px;
     }
 }
