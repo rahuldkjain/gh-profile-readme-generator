@@ -30,8 +30,8 @@ const About = () => {
                     <br />
                     Don't worry. Keep calm and fill the form and let the tool do the work for you
                     <br />
-                    {/* <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/github-profile-readme-generator.gif"
-                        style={{ textAlign: 'center' }} id="gprg-gif" alt="github profile readme generator" /> */}
+                    <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/github-profile-readme-generator.gif"
+                        id="gprg-gif" alt="github profile readme generator" />
                 </div>
                 <div id="faq">
                     <div className="content-title">Why visitors count keeps on increasing?</div>
