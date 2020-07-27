@@ -4,7 +4,7 @@ date: "2019-05-04"
 title: "💵 Support OSS"
 ---
 
-> Think of giving not as a duty but as a privilege --John D. Rockefeller Hr.
+> Think of giving not as a duty but as a privilege  --John D. Rockefeller Hr.
 
 Github Profile README Generator tool is free and will always be free. Numerous developers put their time and effort to make this tool more powerful. However, these developers are doing their full time job along with open-source contributions. 
 
