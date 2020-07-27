@@ -1,5 +1,5 @@
 ---
-slug: "/about"
+slug: "/gh-profile-readme-generator/about"
 date: "2019-05-04"
 title: "👨‍💻 About"
 ---

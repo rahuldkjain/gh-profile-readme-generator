@@ -1,5 +1,5 @@
 ---
-slug: "/addons"
+slug: "/gh-profile-readme-generator/addons"
 date: "2019-05-04"
 title: "🚀 Addons"
 ---

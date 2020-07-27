@@ -1,5 +1,5 @@
 ---
-slug: "/support"
+slug: "/gh-profile-readme-generator/support"
 date: "2019-05-04"
 title: "💵 Support OSS"
 ---
