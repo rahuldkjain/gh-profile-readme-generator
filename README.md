@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://rahuldkjain.github.io/github-profile-readme-generator">
+  <a href="https://rahuldkjain.github.io/gh-profile-readme-generator">
     <img alt="Github Profile Readme Generator" src="./src/images/mdg.png" width="60" />
   </a>
 </p>
@@ -7,13 +7,34 @@
   Github Profile Readme Generator
 </h1>
 
+<p align="center">
+<img src="https://img.shields.io/github/license/rahuldkjain/github-profile-readme-generator?style=flat-square" alt="github-profile-readme-generator licence" />
+<img src="https://img.shields.io/github/forks/rahuldkjain/github-profile-readme-generator?style=flat-square" alt="github-profile-readme-generator forks"/>
+<img src="https://img.shields.io/github/stars/rahuldkjain/github-profile-readme-generator?style=flat-square" alt="github-profile-readme-generator stars"/>
+<img src="https://img.shields.io/github/issues/rahuldkjain/github-profile-readme-generator?style=flat-square" alt="github-profile-readme-generator issues"/>
+<img src="https://img.shields.io/github/issues-pr/rahuldkjain/github-profile-readme-generator?style=flat-square" alt="github-profile-readme-generator pull-requests"/>
+</p>
+
+<p align="center"><img src="./src/images/github-profile-readme-generator.gif" alt="github-profile-readme-generator gif" /></p>
+
+<p align="center">
+    <a href="https://rahuldkjain.github.io/gh-profile-readme-generator" target="blank">View Demo</a>
+    ·
+    <a href="https://github.com/rahuldkjain/github-profile-readme-generator/issues/new/choose">Report Bug</a>
+    ·
+    <a href="https://github.com/rahuldkjain/github-profile-readme-generator/issues/new/choose">Request Feature</a>
+</p>
+
+<p align="center">
+<i>Loved the tool? Please consider <a href="https://paypal.me/rahuldkjain">donating</a>  💸 to help it improve!</i>
+</p>
 
 #### Tired of editing Github Profile README with new features?
 This tool provides an easy way to create github profile readme with latest addons like `visitors count`, `github stats` etc. 
 
-🚀 Try it out: [Live demo](https://rahuldkjain.github.io/github-profile-readme-generator)
+#### 🚀 Try it out: [Live demo](https://rahuldkjain.github.io/gh-profile-readme-generator)
 
-### 🧐 Features
+## 🧐 Features
 Just fill the details like `Name`, `Tagline`, `Dev Platforms Username`, `Current Work`, `Portfolio`, `Blog` etc. with a minimal UI.
 
 Click on `Generate README` to get your README in `markdown`.
@@ -21,4 +42,44 @@ You can preview the README too.
 
 You can add latest addons like `visitors count`, `shields`, `dev icons`, `github stats` etc to your README in just one click.
 
-Designed with 💫 by [Rahul](https://rahuldkjain.github.io)
+## Installation Steps
+1. Clone the repository
+```bash
+git clone https://github.com/rahuldkjain/github-profile-readme-generator.git
+```
+2. Change the working directory
+```bash
+cd github-profile-readme-generator
+```
+3. Install dependencies
+```bash
+npm install
+```
+4. Run the app
+```bash
+npm start
+```
+🌟 You are all set!
+
+
+## Special Thanks 🙇
+- [Anurag Hazra](https://github.com/anuraghazra) for amazing [github-readme-stats](https://github.com/anuraghazra/github-readme-stats)
+- [Anton Komarev](https://github.com/antonkomarev) for super cool [github-profile-views-counter](https://github.com/antonkomarev/github-profile-views-counter)
+- [Gautam Krishna R](https://github.com/gautamkrishnar) for the awesome [blog post workflow](https://github.com/gautamkrishnar/blog-post-workflow)
+- [Julien Monty](https://github.com/konpa) for super useful [devicon](https://github.com/konpa/devicon)
+
+## Sponsors 🙇
+- [Scott C Wilson](https://github.com/scottcwilson) donated the first ever grant to this tool. A big thanks to him.
+
+<p align="center">
+<a href="https://www.paypal.me/rahuldkjain"><img src="https://ionicabizau.github.io/badges/paypal.svg" alt="sponsor github profile readme generator"/>
+</p>
+
+<p align="center">
+  <a href="https://ko-fi.com/A0A81XXSX"><img src="https://www.ko-fi.com/img/githubbutton_sm.svg" alt="sponsor github profile readme generator"/>
+  </a>
+</p>
+
+<p align="center">
+Developed with ❤️ in India 🇮🇳 
+</p>
