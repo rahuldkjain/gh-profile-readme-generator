@@ -1,11 +1,59 @@
 //const baseURL = 'https://devicons.github.io/devicon/devicon.git/icons/';
-const skills = ['vuejs', 'react', 'angularjs', 'aws', 'android', 'backbonejs',
-    'bootstrap', 'c', 'coffeescript',
-    'cplusplus', 'css3', 'csharp', 'd3js', 'django', 'docker', 'dotnet', 'electron', 'go',
-    'gulp', 'html5', 'java', 'javascript', 'typescript', 'laravel', 'mongodb', 'mysql', 'php', 'postgresql',
-    'rails', 'redis', 'redhat', 'ruby', 'rust',
-    'sass', 'scala', 'nodejs', 'python', 'swift', 'oracle', 'nginx', 'linux', 'redux',
-    'webpack', 'express', 'flutter', 'dart'];
+const skills = ['vuejs', 'react', 'angularjs', 'aws', 'android', 'backbonejs', 'bootstrap', 'c', 'cplusplus', 'css3', 'csharp',
+    'd3js', 'django', 'docker', 'dotnet', 'electron', 'go', 'gulp', 'html5', 'java', 'javascript', 'typescript', 'laravel',
+    'symfony', 'codeigniter', 'mongodb', 'mysql', 'php', 'postgresql', 'rails', 'redis', 'ruby', 'rust', 'sass', 'scala',
+    'nodejs', 'python', 'swift', 'spring', 'oracle', 'nginx', 'linux', 'redux', 'webpack', 'express', 'flutter', 'dart', 'kotlin',
+    'tensorflow', 'chartjs', 'jenkins', 'gcp', 'kubernetes', 'azure', 'git', 'kafka', 'solr', 'cassandra', 'rabbitMQ',
+    'hadoop', 'bash', 'pytorch', 'opencv', 'illustrator', 'photoshop', 'figma', 'blender'];
+skills.sort();
+const categories = ['frontend_dev', 'backend_dev', 'ai', 'mobile_dev', 'database', 'data_visualization',
+    'devops', 'framework', 'language', 'software', 'other'];
+const categorizedSkills = {
+    frontend_dev: {
+        title: 'Frontend Development',
+        skills: ['vuejs', 'react', 'angularjs', 'backbonejs', 'bootstrap', 'css3', 'html5', 'gulp', 'sass', 'redux', 'webpack'],
+    },
+    backend_dev: {
+        title: 'Backend Development',
+        skills: ['nodejs', 'spring', 'express', 'kafka', 'solr', 'rabbitMQ', 'hadoop', 'nginx'],
+    },
+    mobile_dev: {
+        title: 'Mobile App Development',
+        skills: ['android', 'flutter', 'dart', 'kotlin'],
+    },
+    ai: {
+        title: 'AI/ML',
+        skills: ['tensorflow', 'pytorch', 'opencv'],
+    },
+    database: {
+        title: 'Database',
+        skills: ['mongodb', 'mysql', 'postgresql', 'redis', 'oracle', 'cassandra'],
+    },
+    devops: {
+        title: 'Devops',
+        skills: ['aws', 'docker', 'jenkins', 'gcp', 'kubernetes', 'bash', 'azure'],
+    },
+    data_visualization: {
+        title: 'Data Visualization',
+        skills: ['d3js', 'chartjs']
+    },
+    framework: {
+        title: '',
+        skills: ['django', 'dotnet', 'electron', 'symfony', 'laravel', 'codeigniter', 'rails']
+    },
+    language: {
+        title: 'Programming Languages',
+        skills: ['c', 'cplusplus', 'csharp', 'go', 'java', 'javascript', 'typescript', 'php', 'ruby', 'scala', 'python', 'swift']
+    },
+    software: {
+        title: 'Software',
+        skills: ['illustrator', 'photoshop', 'figma', 'blender']
+    },
+    other: {
+        title: 'Other',
+        skills: ['linux', 'git']
+    }
+}
 const icons = {
     vuejs: 'https://devicons.github.io/devicon/devicon.git/icons/vuejs/vuejs-original-wordmark.svg',
     react: 'https://devicons.github.io/devicon/devicon.git/icons/react/react-original-wordmark.svg',
@@ -16,6 +64,7 @@ const icons = {
     bootstrap: 'https://devicons.github.io/devicon/devicon.git/icons/bootstrap/bootstrap-plain.svg',
     c: 'https://devicons.github.io/devicon/devicon.git/icons/c/c-original.svg',
     coffeescript: 'https://devicons.github.io/devicon/devicon.git/icons/coffeescript/coffeescript-original-wordmark.svg',
+    codeigniter: 'https://cdn.worldvectorlogo.com/logos/codeigniter.svg',
     cplusplus: 'https://devicons.github.io/devicon/devicon.git/icons/cplusplus/cplusplus-original.svg',
     css3: 'https://devicons.github.io/devicon/devicon.git/icons/css3/css3-original-wordmark.svg',
     csharp: 'https://devicons.github.io/devicon/devicon.git/icons/csharp/csharp-original.svg',
@@ -25,11 +74,9 @@ const icons = {
     dotnet: 'https://devicons.github.io/devicon/devicon.git/icons/dot-net/dot-net-original-wordmark.svg',
     electron: 'https://devicons.github.io/devicon/devicon.git/icons/electron/electron-original.svg',
     express: 'https://devicons.github.io/devicon/devicon.git/icons/express/express-original-wordmark.svg',
-    git: 'https://devicons.github.io/devicon/devicon.git/icons/git/git-original-wordmark.svg',
     go: 'https://devicons.github.io/devicon/devicon.git/icons/go/go-original.svg',
     gulp: 'https://devicons.github.io/devicon/devicon.git/icons/gulp/gulp-plain.svg',
     html5: 'https://devicons.github.io/devicon/devicon.git/icons/html5/html5-original-wordmark.svg',
-    illustrator: 'https://devicons.github.io/devicon/devicon.git/icons/illustrator/illustrator-plain.svg',
     java: 'https://devicons.github.io/devicon/devicon.git/icons/java/java-original-wordmark.svg',
     javascript: 'https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg',
     laravel: 'https://devicons.github.io/devicon/devicon.git/icons/laravel/laravel-plain-wordmark.svg',
@@ -42,22 +89,42 @@ const icons = {
     photoshop: 'https://devicons.github.io/devicon/devicon.git/icons/photoshop/photoshop-plain.svg',
     php: 'https://devicons.github.io/devicon/devicon.git/icons/php/php-original.svg',
     postgresql: 'https://devicons.github.io/devicon/devicon.git/icons/postgresql/postgresql-original-wordmark.svg',
-    python: 'https://devicons.github.io/devicon/devicon.git/icons/python/python-original-wordmark.svg',
+    python: 'https://devicons.github.io/devicon/devicon.git/icons/python/python-original.svg',
     rails: 'https://devicons.github.io/devicon/devicon.git/icons/rails/rails-original-wordmark.svg',
     redis: 'https://devicons.github.io/devicon/devicon.git/icons/redis/redis-original-wordmark.svg',
-    redhat: 'https://devicons.github.io/devicon/devicon.git/icons/redhat/redhat-original-wordmark.svg',
     ruby: 'https://devicons.github.io/devicon/devicon.git/icons/ruby/ruby-original-wordmark.svg',
     rust: 'https://devicons.github.io/devicon/devicon.git/icons/rust/rust-plain.svg',
     sass: 'https://devicons.github.io/devicon/devicon.git/icons/sass/sass-original.svg',
     scala: 'https://devicons.github.io/devicon/devicon.git/icons/scala/scala-original-wordmark.svg',
     sketch: 'https://devicons.github.io/devicon/devicon.git/icons/sketch/sketch-original-wordmark.svg',
+    symfony: 'https://symfony.com/logos/symfony_black_03.svg',
+    spring: 'https://www.vectorlogo.zone/logos/springio/springio-icon.svg',
     swift: 'https://devicons.github.io/devicon/devicon.git/icons/swift/swift-original-wordmark.svg',
     typescript: 'https://devicons.github.io/devicon/devicon.git/icons/typescript/typescript-original.svg',
     linux: 'https://devicons.github.io/devicon/devicon.git/icons/linux/linux-original.svg',
     redux: 'https://devicons.github.io/devicon/devicon.git/icons/redux/redux-original.svg',
     webpack: 'https://devicons.github.io/devicon/devicon.git/icons/webpack/webpack-original.svg',
-    flutter: 'https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/flutter.svg',
-    dart: 'https://cdn.jsdelivr.net/npm/simple-icons@3.1.0/icons/dart.svg',
+    flutter: 'https://www.vectorlogo.zone/logos/flutterio/flutterio-icon.svg',
+    dart: 'https://www.vectorlogo.zone/logos/dartlang/dartlang-icon.svg',
+    kotlin: 'https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg',
+    tensorflow: 'https://www.vectorlogo.zone/logos/tensorflow/tensorflow-icon.svg',
+    chartjs: 'https://www.chartjs.org/media/logo-title.svg',
+    jenkins: 'https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg',
+    gcp: 'https://www.vectorlogo.zone/logos/google_cloud/google_cloud-icon.svg',
+    kubernetes: 'https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg',
+    azure: 'https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-icon.svg',
+    git: 'https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg',
+    kafka: 'https://www.vectorlogo.zone/logos/apache_kafka/apache_kafka-icon.svg',
+    solr: 'https://www.vectorlogo.zone/logos/apache_solr/apache_solr-icon.svg',
+    cassandra: 'https://www.vectorlogo.zone/logos/apache_cassandra/apache_cassandra-icon.svg',
+    rabbitMQ: 'https://www.vectorlogo.zone/logos/rabbitmq/rabbitmq-icon.svg',
+    hadoop: 'https://www.vectorlogo.zone/logos/apache_hadoop/apache_hadoop-icon.svg',
+    bash: 'https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg',
+    pytorch: 'https://www.vectorlogo.zone/logos/pytorch/pytorch-icon.svg',
+    opencv: 'https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg',
+    illustrator: 'https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg',
+    figma: 'https://www.vectorlogo.zone/logos/figma/figma-icon.svg',
+    blender: 'https://download.blender.org/branding/community/blender_community_badge_white.svg',
 }
 
 const initialSkillState = {}
@@ -65,4 +132,4 @@ skills.forEach(skill => {
     initialSkillState[skill] = false
 });
 
-export { initialSkillState, icons, skills };
+export { initialSkillState, icons, skills, categorizedSkills, categories };
