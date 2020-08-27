@@ -180,9 +180,10 @@ input:focus {
   border: 2px solid var(--grey-75);
   text-align: center;
   cursor: pointer;
-  width: 60%;
+  width: 80%;
   justify-self: center;
   padding: 2% 0%;
+  align-self: center;
 }
 
 .download-button {
@@ -190,14 +191,15 @@ input:focus {
   border: 2px solid var(--grey-75);
   text-align: center;
   cursor: pointer;
-  width: 60%;
+  width: 80%;
   justify-self: center;
   padding: 2% 0%;
+  align-self: center;
 }
 
 .utils {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   margin-top: 4%;
 }
 
@@ -209,6 +211,7 @@ input:focus {
   width: 60%;
   justify-self: end;
   padding: 2% 0%;
+  align-self: center;
 }
 
 .loader {
@@ -228,6 +231,7 @@ input:focus {
   width: 60%;
   justify-self: start;
   padding: 2% 0%;
+  align-self: center;
 }
 
 .title {
@@ -355,6 +359,7 @@ a {
   margin-left: 12%;
   width: 40px;
   height: 40px;
+  object-fit: contain;
 }
 
 .skill-preview-icon {
@@ -396,6 +401,42 @@ a {
   padding: 1%;
   background: var(--grey-05);
 }
+
+.config-options {
+  margin-top: 48px;
+  padding: 1% 1% 1% 2%;
+  font-weight: 700;
+  font-size: 12px;
+  border: 2px solid var(--grey-15);
+}
+.new-tag {
+  font-size: 14px;
+  padding: 2px 4px;
+  background: var(--dark-green);
+  color: white;
+}
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.actions .button {
+  max-width: 90px;
+  padding: 8px 16px;
+  align-self: center;
+  justify-self: end;
+  text-align: center;
+}
+
+.actions .data {
+  display: flex;
+  align-items: center;
+}
+
+.actions .data input {
+  flex: 1;
+}
+
 @media only screen and (max-width: 1199px) {
   .section-title {
     font-size: 18px;
@@ -487,4 +528,11 @@ a {
   .skills-category-title {
     font-size: 14px;
   }
+
+  .actions {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
 }
+
+

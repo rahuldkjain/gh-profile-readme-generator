@@ -6,7 +6,7 @@ import gsap from "gsap"
 import axios from "axios"
 import {Link} from "gatsby"
 
-const Header = props => {
+const Header = (props) => {
   const fetchData = async () => {
     var response = await axios.get(
       "https://api.github.com/repos/rahuldkjain/github-profile-readme-generator"
@@ -72,7 +72,7 @@ const Header = props => {
           target="blank"
         >
           <div className="github-button">
-            <RepoForkedIcon size={16} className="fork-icon" /> Fork on Github{" "}
+            <RepoForkedIcon size={16} className="fork-icon" /> Fork on GitHub{" "}
             <span className="github-count">{stats.forksCount}</span>
           </div>
         </a>
