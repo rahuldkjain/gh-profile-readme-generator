@@ -1,4 +1,3 @@
-//const baseURL = 'https://devicons.github.io/devicon/devicon.git/icons/';
 const categorizedSkills = {
   language: {
     title: "Programming Languages",
@@ -20,6 +19,9 @@ const categorizedSkills = {
       "clojure",
       "rust",
       "haskell",
+      "coffeescript",
+      "elixir",
+      "erlang",
     ],
   },
 
@@ -78,6 +80,7 @@ const categorizedSkills = {
       "xamarin",
       "reactnative",
       "ionic",
+      "apachecordova",
     ],
   },
 
@@ -101,6 +104,7 @@ const categorizedSkills = {
       "mariadb",
       "cockroachdb",
       "elasticsearch",
+      "sqlite",
     ],
   },
 
@@ -120,13 +124,14 @@ const categorizedSkills = {
       "bash",
       "azure",
       "vagrant",
-      "circleci"
+      "circleci",
+      "travisci",
     ],
   },
 
   baas: {
     title: "Backend as a Service(BaaS)",
-    skills: ["firebase", "amplify"],
+    skills: ["firebase", "amplify", "heroku"],
   },
 
   framework: {
@@ -140,7 +145,7 @@ const categorizedSkills = {
       "codeigniter",
       "rails",
       "flask",
-      "quasar"
+      "quasar",
     ],
   },
 
@@ -168,34 +173,43 @@ const categorizedSkills = {
       "sketch",
       "invision",
       "framer",
+      "matlab",
+      "postman",
     ],
   },
 
   static_site_generator: {
     title: "Static Site Generators",
     skills: [
-      "gatsby", 
-      "gridsome", 
-      "hugo", 
-      "jekyll", 
-      "nextjs", 
-      "nuxtjs", 
-      "11ty", 
+      "gatsby",
+      "gridsome",
+      "hugo",
+      "jekyll",
+      "nextjs",
+      "nuxtjs",
+      "11ty",
       "scully",
       "sculpin",
       "sapper",
-      "vuepress"
+      "vuepress",
+      "hexo",
+      "middleman",
     ],
   },
 
-  game_engines:{
+  game_engines: {
     title: "Game Engines",
-    skills: ["unity"],
+    skills: ["unity", "unreal"],
+  },
+
+  automation: {
+    title: "Automation",
+    skills: ["zapier"],
   },
 
   other: {
     title: "Other",
-    skills: ["linux", "git"],
+    skills: ["linux", "git", "arduino"],
   },
 }
 
@@ -210,6 +224,7 @@ const icons = {
     "https://devicons.github.io/devicon/devicon.git/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
   android:
     "https://devicons.github.io/devicon/devicon.git/icons/android/android-original-wordmark.svg",
+  arduino: "https://cdn.worldvectorlogo.com/logos/arduino-1.svg",
   backbonejs:
     "https://devicons.github.io/devicon/devicon.git/icons/backbonejs/backbonejs-original-wordmark.svg",
   bootstrap:
@@ -268,12 +283,10 @@ const icons = {
     "https://devicons.github.io/devicon/devicon.git/icons/oracle/oracle-original.svg",
   photoshop:
     "https://devicons.github.io/devicon/devicon.git/icons/photoshop/photoshop-plain.svg",
-  xd:
-    "https://cdn.worldvectorlogo.com/logos/adobe-xd.svg",
+  xd: "https://cdn.worldvectorlogo.com/logos/adobe-xd.svg",
   php:
     "https://devicons.github.io/devicon/devicon.git/icons/php/php-original.svg",
-  perl:
-    "https://api.iconify.design/logos-perl.svg",
+  perl: "https://api.iconify.design/logos-perl.svg",
   postgresql:
     "https://devicons.github.io/devicon/devicon.git/icons/postgresql/postgresql-original-wordmark.svg",
   python:
@@ -290,6 +303,7 @@ const icons = {
     "https://devicons.github.io/devicon/devicon.git/icons/sass/sass-original.svg",
   scala:
     "https://devicons.github.io/devicon/devicon.git/icons/scala/scala-original-wordmark.svg",
+  solidworks: "https://cdn.worldvectorlogo.com/logos/solidworks.svg",
   symfony: "https://symfony.com/logos/symfony_black_03.svg",
   spring: "https://www.vectorlogo.zone/logos/springio/springio-icon.svg",
   swift:
@@ -361,7 +375,7 @@ const icons = {
   nextjs: "https://cdn.worldvectorlogo.com/logos/nextjs-3.svg",
   reactnative: "https://reactnative.dev/img/header_logo.svg",
   mariadb: "https://www.vectorlogo.zone/logos/mariadb/mariadb-icon.svg",
-  cockroachdb:  "https://cdn.worldvectorlogo.com/logos/cockroachdb.svg",
+  cockroachdb: "https://cdn.worldvectorlogo.com/logos/cockroachdb.svg",
   objectivec:
     "https://www.vectorlogo.zone/logos/apple_objectivec/apple_objectivec-icon.svg",
   clojure:
@@ -389,16 +403,12 @@ const icons = {
     "https://devicons.github.io/devicon/devicon.git/icons/ember/ember-original-wordmark.svg",
   scikit_learn:
     "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
-  quasar:
-    "https://cdn.quasar.dev/logo/svg/quasar-logo.svg",
+  quasar: "https://cdn.quasar.dev/logo/svg/quasar-logo.svg",
   kibana:
     "https://www.vectorlogo.zone/logos/elasticco_kibana/elasticco_kibana-icon.svg",
-  grafana:
-    "https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg",
-  elasticsearch:
-    "https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg",
-  circleci:
-    "https://www.vectorlogo.zone/logos/circleci/circleci-icon.svg",
+  grafana: "https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg",
+  elasticsearch: "https://www.vectorlogo.zone/logos/elastic/elastic-icon.svg",
+  circleci: "https://www.vectorlogo.zone/logos/circleci/circleci-icon.svg",
   scully:
     "https://raw.githubusercontent.com/scullyio/scully/main/assets/logos/SVG/scullyio-icon.svg",
   "11ty":
@@ -406,14 +416,31 @@ const icons = {
   sculpin:
     "https://gist.githubusercontent.com/vivek32ta/c7f7bf583c1fb1c58d89301ea40f37fd/raw/1782aef8672484698c0dd407f900c4a329ed5bc4/sculpin.svg",
   sapper:
-    "https://raw.githubusercontent.com/bestofjs/bestofjs-webui/master/public/logos/sapper.svg", 
+    "https://raw.githubusercontent.com/bestofjs/bestofjs-webui/master/public/logos/sapper.svg",
   vuepress:
     "https://raw.githubusercontent.com/AliasIO/wappalyzer/master/src/drivers/webextension/images/icons/VuePress.svg",
-  unity:
-    "https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg"
+  unity: "https://www.vectorlogo.zone/logos/unity3d/unity3d-icon.svg",
+  unreal:
+    "https://raw.githubusercontent.com/kenangundogan/fontisto/036b7eca71aab1bef8e6a0518f7329f13ed62f6b/icons/svg/brand/unreal-engine.svg",
+  elixir: "https://www.vectorlogo.zone/logos/elixir-lang/elixir-lang-icon.svg",
+  heroku: "https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg",
+  coffeescript:
+    "https://www.vectorlogo.zone/logos/coffeescript/coffeescript-icon.svg",
+  hexo: "https://www.vectorlogo.zone/logos/hexoio/hexoio-icon.svg",
+  travisci: "https://www.vectorlogo.zone/logos/travis-ci/travis-ci-icon.svg",
+  apachecordova:
+    "https://www.vectorlogo.zone/logos/apache_cordova/apache_cordova-icon.svg",
+  zapier: "https://www.vectorlogo.zone/logos/zapier/zapier-icon.svg",
+  postman: "https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg",
+  erlang: "https://www.vectorlogo.zone/logos/erlang/erlang-official.svg",
+  sqlite: "https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg",
+  middleman:
+    "https://raw.githubusercontent.com/leungwensen/svg-icon/b84b3f3a3da329b7c1d02346865f8e98beb05413/dist/svg/logos/middleman.svg",
 }
 
 const skillWebsites = {
+  arduino: "https://www.arduino.cc/",
+  solidworks: "https://www.solidworks.com/",
   vuejs: "https://vuejs.org/",
   react: "https://reactjs.org/",
   angularjs: "https://angular.io",
@@ -443,6 +470,7 @@ const skillWebsites = {
   javascript: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   ionic: "https://ionicframework.com",
   laravel: "https://laravel.com/",
+  matlab: "https://www.mathworks.com/",
   meteor: "https://www.meteor.com/",
   mongodb: "https://www.mongodb.com/",
   mysql: "https://www.mysql.com/",
@@ -463,8 +491,8 @@ const skillWebsites = {
   sass: "https://sass-lang.com",
   scala: "https://www.scala-lang.org",
   symfony: "https://symfony.com",
-  spring: "",
-  swift: "",
+  spring: "https://spring.io/",
+  swift: "https://developer.apple.com/swift/",
   typescript: "https://www.typescriptlang.org/",
   linux: "https://www.linux.org/",
   redux: "https://redux.js.org",
@@ -489,34 +517,35 @@ const skillWebsites = {
   opencv: "https://opencv.org/",
   illustrator: "https://www.adobe.com/in/products/illustrator.html",
   figma: "https://www.figma.com/",
-  blender: "",
+  blender: "https://www.blender.org/",
   babel: "https://babeljs.io/",
   sketch: "https://www.sketch.com/",
-  flask: "",
+  flask: "https://flask.palletsprojects.com/",
   nativescript: "https://nativescript.org/",
   xamarin: "https://dotnet.microsoft.com/apps/xamarin",
-  vagrant: "",
+  vagrant: "https://www.vagrantup.com/",
   tailwind: "https://tailwindcss.com/",
   materialize: "https://materializecss.com/",
   invision: "https://www.invisionapp.com/",
-  framer: "",
+  framer: "https://www.framer.com/",
   bulma: "https://bulma.io/",
-  couchdb: "",
+  couchdb: "https://couchdb.apache.org/",
   firebase: "https://firebase.google.com/",
   amplify: "https://aws.amazon.com/amplify/",
-  hive: "",
-  realm: "",
+  hive: "https://hive.apache.org/",
+  realm: "https://realm.io/",
   gatsby: "https://www.gatsbyjs.com/",
-  gridsome: "",
+  gridsome: "https://gridsome.org/",
   nuxtjs: "https://nuxtjs.org/",
   jekyll: "https://jekyllrb.com/",
   nextjs: "https://nextjs.org/",
   reactnative: "https://reactnative.dev/",
   mariadb: "https://mariadb.org/",
   cockroachdb: "https://www.cockroachlabs.com/product/cockroachdb/",
-  objectivec: "",
-  clojure: "",
-  haskell: "",
+  objectivec:
+    "https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html",
+  clojure: "https://clojure.org/",
+  haskell: "https://www.haskell.org/",
   svelte: "https://svelte.dev",
   vuetify: "https://vuetifyjs.com/en/",
   pug: "https://pugjs.org",
@@ -527,11 +556,11 @@ const skillWebsites = {
   puppeteer: "https://github.com/puppeteer/puppeteer",
   karma: "https://karma-runner.github.io/latest/index.html",
   jasmine: "https://jasmine.github.io/",
-  gtk: "",
-  qt: "",
-  wx_widgets: "",
-  ember: "",
-  scikit_learn: "",
+  gtk: "https://www.gtk.org/",
+  qt: "https://www.qt.io/",
+  wx_widgets: "https://www.wxwidgets.org/",
+  ember: "https://emberjs.com/",
+  scikit_learn: "https://scikit-learn.org/",
   quasar: "https://quasar.dev/",
   kibana: "https://www.elastic.co/kibana",
   grafana: "https://grafana.com",
@@ -542,7 +571,19 @@ const skillWebsites = {
   "11ty": "https://www.11ty.dev/",
   sapper: "https://sapper.svelte.dev/",
   vuepress: "https://vuepress.vuejs.org/",
-  unity: "https://unity.com/"
+  unity: "https://unity.com/",
+  unreal: "https://unrealengine.com/",
+  hexo: "hexo.io/",
+  heroku: "https://heroku.com",
+  zapier: "https://zapier.com",
+  elixir: "https://elixir-lang.org",
+  travisci: "https://travis-ci.org",
+  apachecordova: "https://cordova.apache.org/",
+  coffeescript: "https://coffeescript.org/",
+  sqlite: "https://www.sqlite.org/",
+  postman: "https://postman.com",
+  erlang: "https://www.erlang.org/",
+  middleman: "https://middlemanapp.com/",
 }
 
 const initialSkillState = {}

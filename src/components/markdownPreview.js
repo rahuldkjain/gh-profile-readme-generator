@@ -1,5 +1,6 @@
 import React from "react"
 import { icons, skills, skillWebsites } from "../constants/skills"
+import { githubStatsLinkGenerator, topLanguagesLinkGenerator } from "../utils/link-generators"
 
 const MarkdownPreview = props => {
   const TitlePreview = props => {
@@ -19,7 +20,9 @@ const MarkdownPreview = props => {
     return null
   }
   const SectionTitle = props => {
-    if (props.label) {
+    if (!props.visible)
+      return null
+    else if (props.label) {
       return <h3 className="w-full text-lg sm:text-xl">{props.label}</h3>
     }
     return null
@@ -110,9 +113,14 @@ const MarkdownPreview = props => {
     return null
   }
   const SocialPreview = props => {
+    let viewSocial = false;
+    Object.keys(props.social).forEach(key => {
+      if (props.social[key] && key != 'github')
+        viewSocial = true;
+    })
     return (
       <div className="flex justify-start items-end flex-wrap">
-        <SectionTitle label="Connect with me:" />
+        <SectionTitle label="Connect with me:" visible={viewSocial}/>
         <DisplaySocial
           base="https://codepen.io"
           icon="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/codepen.svg"
@@ -267,29 +275,22 @@ const MarkdownPreview = props => {
     }
     return null
   }
-  const GitHubStatsPreview = props => {
-    let link =
-      "https://github-readme-stats.vercel.app/api?username=" +
-      props.github +
-      "&show_icons=true"
-    if (props.show) {
+
+  const GitHubStatsPreview = ({github, options, show })=> {
+    if (show) {
       return (
         <div className="text-center mx-4 mb-4">
-          <img src={link} alt={props.github} />
+          <img src={githubStatsLinkGenerator({github, options})} alt={github} />
         </div>
       )
     }
     return null
   }
-  const TopLanguagesPreview = props => {
-    let link =
-      "https://github-readme-stats.vercel.app/api/top-langs/?username=" +
-      props.github +
-      "&layout=compact"
-    if (props.show) {
+  const TopLanguagesPreview = ({github, options, show})=> {
+    if (show) {
       return (
         <div className="text-center mx-4 mb-4">
-          <img src={link} alt={props.github} />
+          <img src={topLanguagesLinkGenerator({github, options})} alt={props.github} />
         </div>
       )
     }
@@ -313,7 +314,7 @@ const MarkdownPreview = props => {
     })
     return listSkills.length > 0 ? (
       <div className="flex flex-wrap justify-start items-center">
-        <SectionTitle label="Languages and Tools:" />
+        <SectionTitle label="Languages and Tools:" visible={true}/>
         {listSkills}
       </div>
     ) : (
@@ -348,10 +349,12 @@ const MarkdownPreview = props => {
         <TopLanguagesPreview
           show={props.data.topLanguages}
           github={props.social.github}
+          options={props.data.topLanguagesOptions}
         />
         <GitHubStatsPreview
           show={props.data.githubStats}
           github={props.social.github}
+          options={props.data.githubStatsOptions}
         />
       </div>
     </div>
