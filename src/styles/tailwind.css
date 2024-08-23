@@ -1,10 +1,6 @@
 @tailwind base;
-
 @tailwind components;
-
 @tailwind utilities;
-
-@tailwind @screens;
 
 /* Additional vertical padding used by kbd tag. */
 .py-05 {
@@ -16,15 +12,15 @@
   @apply text-gray-900 leading-normal break-words;
 }
 
-.markdown > * + * {
+.markdown>*+* {
   @apply mt-0 mb-4;
 }
 
-.markdown li + li {
+.markdown li+li {
   @apply mt-1;
 }
 
-.markdown li > p + p {
+.markdown li>p+p {
   @apply mt-6;
 }
 

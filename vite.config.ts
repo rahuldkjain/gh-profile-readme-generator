@@ -1,10 +1,11 @@
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react"
 import { resolve } from "path"
+import mdx from "@mdx-js/rollup"
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), mdx()],
   resolve: {
     alias: {
       "@components": resolve(__dirname, "src/components"),

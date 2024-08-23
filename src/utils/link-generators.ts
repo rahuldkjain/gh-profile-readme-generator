@@ -57,22 +57,22 @@ export const githubStatsLinkGenerator = ({
   github,
   options,
 }: GitHubOptions): string =>
-  `https://github-readme-stats.vercel.app/api?username=${github}&${githubStatsStylingQueryString(
-    options
-  )}`
+  `https://github-readme-stats.vercel.app/api?username=${github}${
+    options ? "&" + githubStatsStylingQueryString(options) : ""
+  }}`
 
 export const topLanguagesLinkGenerator = ({
   github,
   options,
 }: GitHubOptions): string =>
-  `https://github-readme-stats.vercel.app/api/top-langs?username=${github}&${githubStatsStylingQueryString(
-    options
-  )}&layout=compact`
+  `https://github-readme-stats.vercel.app/api/top-langs?username=${github}${
+    options ? "&" + githubStatsStylingQueryString(options) : ""
+  }&layout=compact`
 
 export const streakStatsLinkGenerator = ({
   github,
   options,
 }: GitHubOptions): string =>
-  `https://github-readme-streak-stats.herokuapp.com/?user=${github}&${streakStatsStylingQueryString(
-    options
-  )}`
+  `https://github-readme-streak-stats.herokuapp.com/?user=${github}${
+    options ? "&" + streakStatsStylingQueryString(options) : ""
+  }`

@@ -1,6 +1,6 @@
 import "./App.css"
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import About from "./pages/About"
+import About from "@pages/addons.mdx"
 import Home from "./pages/Home"
 
 function App() {
