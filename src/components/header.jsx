@@ -4,7 +4,6 @@ import { StarIcon, RepoForkedIcon } from "@primer/octicons-react"
 import gsap from "gsap"
 import axios from "axios"
 import { Link } from "gatsby"
-import { act } from "react-dom/test-utils"
 import links from "../constants/page-links"
 import logo from "../images/mdg.png"
 
@@ -35,12 +34,11 @@ const Header = props => {
         forks_count: forksCount,
       } = response.data
 
-      act(() =>
-        setstats({
-          starsCount: stargazersCount,
-          forksCount,
-        })
-      )
+      // Update state with fetched data
+      setstats({
+        starsCount: stargazersCount,
+        forksCount,
+      })
     }
   }
   useEffect(() => {
@@ -79,12 +77,12 @@ const Header = props => {
                 </span>
               </div>
             </div>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-4">
               <a
                 href="https://rahuldkjain.github.io/github-profile-readme-generator/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-white text-purple-700 px-5 py-2 rounded-lg text-sm font-bold hover:bg-purple-50 hover:shadow-md transform hover:scale-105 transition-all duration-200 whitespace-nowrap shadow-sm"
+                className="bg-white text-purple-700 px-4 py-2.5 text-sm font-bold hover:bg-purple-50 hover:shadow-lg transform hover:scale-105 transition-all duration-200 whitespace-nowrap shadow-md mx-2"
               >
                 Upgrade to V2 →
               </a>
