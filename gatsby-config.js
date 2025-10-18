@@ -42,18 +42,20 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: 'UA-168596085-3',
-        // this option places the tracking script into the head of the DOM
-        head: true,
-        // other options
+        // Shared GA4 property for both V1 and V2 tools
+        trackingIds: ["G-2ET7VT431Q"],
+        pluginConfig: {
+          // this option places the tracking script into the head of the DOM
+          head: true,
+        },
       },
     },
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require('tailwindcss')],
+        postCssPlugins: [require("tailwindcss")],
       },
     },
     {
@@ -69,4 +71,4 @@ module.exports = {
   // this (optional) plugin enables Progressive Web App + Offline functionality
   // To learn more, visit: https://gatsby.dev/offline
   // `gatsby-plugin-offline`,
-};
+}
